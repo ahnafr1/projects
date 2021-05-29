@@ -2,7 +2,7 @@ def arr_input(): #function to input numbers into array
     i = 0
     while i < size:
         try:
-            ele = float(input("Enter your elements"))
+            ele = float(input("Enter your elements: "))
             arr.append(ele)
             i += 1
         except ValueError as Error:
@@ -22,8 +22,8 @@ def calculator():
         print (sum)
 
     elif func == "-":
-        diff = 0
-        i = 0
+        diff = arr[0]
+        i = 1
         while i < size:
             diff -= arr[i] 
             i += 1
