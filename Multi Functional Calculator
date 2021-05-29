@@ -43,9 +43,7 @@ def calculator():
             if arr[1] == 0:
                 print ("You cannot divide by 0")
             else:
-                while i < size:
-                    quo = arr[0]/arr[1] 
-                    i += 1
+                quo = arr[0]/arr[1] 
                 print (quo)      
         else:
             print ("Please have only 2 inputs")
