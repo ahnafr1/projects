@@ -1,11 +1,8 @@
-rr = []
-
 def arr_input(): #function to input numbers into array
-    print ("Enter your elements")
     i = 0
     while i < size:
         try:
-            ele = float(input())
+            ele = float(input("Enter your elements"))
             arr.append(ele)
             i += 1
         except ValueError as Error:
@@ -17,7 +14,7 @@ def calculator():
     
     #if else statement for operations to use
     if func == "+":
-        sum = float()
+        sum = 0
         i = 0
         while i < size:
             sum += arr[i] 
@@ -25,7 +22,7 @@ def calculator():
         print (sum)
 
     elif func == "-":
-        diff = float()
+        diff = 0
         i = 0
         while i < size:
             diff -= arr[i] 
@@ -41,12 +38,10 @@ def calculator():
         print (prod)
 
     elif func == "/":
-        quo = float()
-        i = 0
+        quo = 0
         if size == 2: 
             if arr[1] == 0:
                 print ("You cannot divide by 0")
-                return
             else:
                 while i < size:
                     quo = arr[0]/arr[1] 
@@ -56,7 +51,7 @@ def calculator():
             print ("Please have only 2 inputs")
     else:
         print ("Invalid Operation")
-        return
+        
 
 while True: #loop the code until user breaks
     arr = []
@@ -64,16 +59,16 @@ while True: #loop the code until user breaks
     
     calculator()
     while True:
-        e = input("Do you want to continue? (y/n): ")
+        confirm = input("Do you want to continue? (y/n): ")
 
-        if e == "y":
-            r = True
+        if confirm == "y":
+            res = True
             break
-        elif e == "n":
-            r = False
+        elif confirm == "n":
+            res = False
             break
         else:
             True
 
-    if r == False:
+    if res == False:
         break
