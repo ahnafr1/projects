@@ -1,0 +1,79 @@
+rr = []
+
+def arr_input(): #function to input numbers into array
+    print ("Enter your elements")
+    i = 0
+    while i < size:
+        try:
+            ele = float(input())
+            arr.append(ele)
+            i += 1
+        except ValueError as Error:
+            print("That wasn't a number. Try that number again")
+
+def calculator():
+    arr_input()
+    func = input("Choose what function you want to use [+,-,*,/(max 2 elements): ")
+    
+    #if else statement for operations to use
+    if func == "+":
+        sum = float()
+        i = 0
+        while i < size:
+            sum += arr[i] 
+            i += 1
+        print (sum)
+
+    elif func == "-":
+        diff = float()
+        i = 0
+        while i < size:
+            diff -= arr[i] 
+            i += 1
+        print (diff)
+
+    elif func == "*":
+        prod = 1
+        i = 0
+        while i < size:
+            prod *= arr[i] 
+            i += 1
+        print (prod)
+
+    elif func == "/":
+        quo = float()
+        i = 0
+        if size == 2: 
+            if arr[1] == 0:
+                print ("You cannot divide by 0")
+                return
+            else:
+                while i < size:
+                    quo = arr[0]/arr[1] 
+                    i += 1
+                print (quo)      
+        else:
+            print ("Please have only 2 inputs")
+    else:
+        print ("Invalid Operation")
+        return
+
+while True: #loop the code until user breaks
+    arr = []
+    size = int(input("Enter how many elements you want: "))
+    
+    calculator()
+    while True:
+        e = input("Do you want to continue? (y/n): ")
+
+        if e == "y":
+            r = True
+            break
+        elif e == "n":
+            r = False
+            break
+        else:
+            True
+
+    if r == False:
+        break
